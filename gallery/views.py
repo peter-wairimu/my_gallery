@@ -13,4 +13,5 @@ def viewPhoto(request,pk):
 
 
 def addPhoto(request):
-    return render(request,'my-gallery/form.html')
+    categories = Category.objects.all()
+    return render(request,'my-gallery/form.html',{'categories': categories})

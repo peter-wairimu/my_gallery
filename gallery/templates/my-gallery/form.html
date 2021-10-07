@@ -8,14 +8,49 @@
     <title>add photo</title>
 </head>
 <body class="m-5">
-    <div class="container justify-content-center">
-        <div class="row">
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="col-md-4">
-                form
+                <div class="card">
+
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="form-group m-3">
+                            <label>Description</label>
+                            <input name="description" type="text" class="form-control-file" placeholder="Enter a description">
+                        </div>
+
+                        <div class="form-group m-3">
+                            <label>select category</label>
+                            <select name="category" class="form-control">
+                                <option value="none">select category</option>
+                                
+                                {% for category in categories %}
+                                <option value="{{category.id}}">category.name</option>
+                                
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-group m-3">
+                            <label>create a new category</label>
+                            <input name="new_category" type="text" class="form-control-file" placeholder="Enter new category">
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <label>Upload image</label>
+                            <input type="file" name="image" class="form-control-file">
+                        </div>
+                        <button type="submit" class="btn btn-secondary">submit</button>
+
+                    </form>
+                </div>
 
             </div>
         </div>
-
+        <a href="{% url 'gallery' %}" class="btn btn-primary my-3">Go back</a>
 
     </div>
     
