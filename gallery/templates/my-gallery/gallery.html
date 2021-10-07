@@ -17,9 +17,11 @@
                   Categories
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Cras justo odio</li>
-                  <li class="list-group-item">Dapibus ac facilisis in</li>
-                  <li class="list-group-item">Vestibulum at eros</li>
+                  {%for category in categories %}
+
+                  <li class="list-group-item">{{category.name}}</li>
+                  {% endfor %}
+                  
                   <li class="list-group-item">
                     <a href="{% url 'add' %}" class="btn btn-dark btn-sm m-1">add image</a>
                   </li>
@@ -41,26 +43,7 @@
 
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="img-thumbnail" src="//unsplash.it/400/400" alt="Card image cap">
-                        <div class="card-body">
-                          <p>category: pets</p>
-                        </div>
-                        <a class="btn btn-outline-danger btn-sm m-1" href="{% url 'photo' 5 %}">View</a>
-                      </div>
-
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="img-thumbnail" src="//unsplash.it/400/400" alt="Card image cap">
-                        <div class="card-body">
-                          <p>category: pets</p>
-                        </div>
-                        <a class="btn btn-outline-danger btn-sm m-1" href="{% url 'photo' 5 %}">View</a>
-                      </div>
-
-                </div>
+                
 
 
             </div>
