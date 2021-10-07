@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Category,Photo
 # Create your views here.
 
@@ -14,4 +14,27 @@ def viewPhoto(request,pk):
 
 def addPhoto(request):
     categories = Category.objects.all()
+    if request.method == 'POST':
+        data = request.POST
+        img = request.FILES.get('image')
+
+        if data['category'] != 'none':
+            category = Category.objects.get(id =data['category'])
+        elif data['new_category']!='':
+            category, created = Category.objects.get_or_create(name=data['new_category'])
+        else:
+            category = None
+
+        photo = Photo.objects.create(
+            category = category,
+            description = data['description'],
+            img = img
+
+        )
+        return redirect("gallery")
+        
+
+
+
+
     return render(request,'my-gallery/form.html',{'categories': categories})
