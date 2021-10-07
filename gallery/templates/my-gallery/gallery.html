@@ -32,16 +32,21 @@
           </div>
           <div class="col-md-9">
             <div class="row">
+              {% for photo in photos %}            
                 <div class="col-md-4">
                     <div class="card">
-                        <img class="img-thumbnail" src="//unsplash.it/400/400" alt="Card image cap">
+                        <img class="img-thumbnail" src="{{photo.img.url}}" alt="Card image cap">
                         <div class="card-body">
-                          <p>category: pets</p>
+                          <p>category: {{photo.category.name}}</p>
                         </div>
-                        <a class="btn btn-outline-danger btn-sm m-1" href="{% url 'photo' 5 %}">View</a>
+                        <a class="btn btn-outline-danger btn-sm m-1" href="{% url 'photo' photo.id  %}">View</a>
                       </div>
 
                 </div>
+                {% empty %}
+                <h2>Images not available.....</h2>
+
+                {% endfor %}
 
                 
 

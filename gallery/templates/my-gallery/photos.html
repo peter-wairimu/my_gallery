@@ -13,8 +13,8 @@
             <div class="col">
                 <a href="{% url 'gallery' %}" class="btn btn-primary my-3">Go back</a>
                 <div style="height: 90vh;">
-                    <img src="//unsplash.it/400/400" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas voluptate ipsum nam error consectetur impedit, facilis quam provident atque voluptates! Ea, cupiditate minima soluta rerum dignissimos iusto blanditiis expedita sapiente.</p>
+                    <img src="{{photo.img.url}}" alt="">
+                    <p>{{photo.description}}</p>
                 </div>
 
             </div>
