@@ -1,12 +1,12 @@
-from django.conf.urls import url
+from django.urls import path
 from .import views
 
 
 urlpatterns=[
 
-    url(r'^$',views.gallery, name ='gallery'),
-    url(r'^photo/(\d+)$',views.viewPhoto, name ='photo'),
-    url(r'^add/$',views.addPhoto, name ='add')
+    path('',views.gallery, name ='gallery'),
+    path('photo/<str:pk>/',views.viewPhoto, name ='photo'),
+    path('add/',views.addPhoto, name ='add')
 
 
 
