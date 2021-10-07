@@ -4,7 +4,8 @@ from .models import Category,Photo
 
 def gallery(request):
     categories = Category.objects.all()
-    return render(request,'my-gallery/gallery.html',{'categories': categories})
+    photos = Photo.objects.all()
+    return render(request,'my-gallery/gallery.html',{'categories': categories,'photos':photos})
 
 def viewPhoto(request,pk):
     return render(request,'my-gallery/photos.html')
