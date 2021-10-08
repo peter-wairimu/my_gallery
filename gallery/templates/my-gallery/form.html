@@ -16,12 +16,12 @@
 
                     <form action="" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <div class="form-group m-3">
+                        <div class="form-group m-3" id="new">
                             <label>Description</label>
-                            <input name="description" type="text" class="form-control-file" placeholder="Enter a description">
+                            <input style="color: rgb(2, 14, 41);" name="description" type="text" class="form-control-file" placeholder="Enter a description" required>
                         </div>
 
-                        <div class="form-group m-3">
+                        <div class="form-group m-3" id="new">
                             <label>select category</label>
                             <select name="category" class="form-control">
                                 <option value="none">select category</option>
@@ -33,7 +33,7 @@
                             </select>
                         </div>
 
-                        <div class="form-group m-3">
+                        <div class="form-group m-3" id="new">
                             <label>create a new category</label>
                             <input name="new_category" type="text" class="form-control-file" placeholder="Enter new category">
                         </div>
@@ -41,19 +41,19 @@
 
 
 
-                        <div class="form-group">
+                        <div class="form-group" id="new">
                             <label>Upload image</label>
                             <input type="file" name="image" class="form-control-file">
                         </div>
-                        <button type="submit" class="btn btn-secondary">submit</button>
+                        <button type="submit" class="btn-c btn-secondary">submit</button>
 
                     </form>
                 </div>
+                <a href="{% url 'gallery' %}" class="btn">Go back</a>
 
             </div>
         </div>
-        <a href="{% url 'gallery' %}" class="btn btn-primary my-3">Go back</a>
-
+        
     </div>
     
 
@@ -67,5 +67,33 @@
       background-position: center;
       background-size: cover;
     }
+#new{
+    color: rgb(2, 14, 41);
+    font-style: italic;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    text-transform: capitalize;
+}
+.card{
+    background-color: rgb(213, 216, 223);
+    box-shadow: 10px 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(104, 72, 72, 0.2);
+}
+.btn{
+    background-color: rgb(16, 16, 71);
+    color: aliceblue;
+    text-transform: capitalize;
+    font-family: 'Lato', sans-serif;
+
+  }
+  .btn:hover{
+    color: rgb(18, 104, 104);
+    
+  }
+
+
   
   </style>

@@ -16,28 +16,28 @@
 <body class="">
   
     <div class="container">
-        <div class="row">
-          <div class="col-sm">
+        <div class="row" id="row">
+          <div id="col" class="col-sm">
 
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
+            <div class="card"  id="card" >
+                <div id="head"class="card-header">
                   Categories
                 </div>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
-                    <a href="{% url 'gallery' %}">all</a>
+                    <a href="{% url 'gallery' %}" style="color: rgb(62, 62, 207);text-transform: uppercase; font-family: 'Lato', sans-serif; font-style: italic;">all</a>
                   </li>
                   {%for category in categories %}
                   
 
                   <li class=" list-group-item">
-                    <a href="{% url 'gallery' %}?category={{category.name}}">
+                    <a href="{% url 'gallery' %}?category={{category.name}}" style="color: rgb(62, 62, 207);text-transform: uppercase; font-family: 'Lato', sans-serif; font-style: italic;">
                         {{category.name}}
                     </a>
                   {% endfor %}
                   
                   <li class="list-group-item">
-                    <a href="{% url 'add' %}" class="btn btn-dark btn-sm m-1">add image</a>
+                    <a href="{% url 'add' %}" class="btn">add image</a>
                   </li>
                 </ul>
               </div>
@@ -51,9 +51,9 @@
                     <div class="card">
                         <img class="img-thumbnail" src="{{photo.img.url}}" alt="Card image cap">
                         <div class="card-body">
-                          <p>category: {{photo.category.name}}</p>
+                          <p class="par">category: {{photo.category.name}}</p>
                         </div>
-                        <a class="btn btn-outline-danger btn-sm m-1" href="{% url 'photo' photo.id  %}">View</a>
+                        <a class="btn btn-outline btn-sm m-1" href="{% url 'photo' photo.id  %}">View</a>
                       </div>
 
                 </div>
@@ -82,6 +82,53 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+  }
+  #card{
+    padding: 1rem;
+    background-color: rgb(213, 216, 223);
+    box-shadow: 10px 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+  }
+
+
+  #card ul li{
+    background-color: rgb(213, 216, 223);
+    box-shadow: 10px 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+    #card:hover {
+      box-shadow: 0 8px 16px 0 rgba(104, 72, 72, 0.2);
+  }
+  #row{
+    padding: 2rem;
+  }
+  #head{
+    background-color: rgb(229, 233, 241);
+    font-style: italic;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    text-transform: capitalize;
+    color: rgb(11, 11, 51);
+  }
+  .btn{
+    background-color: rgb(16, 16, 71);
+    color: aliceblue;
+    text-transform: capitalize;
+    font-family: 'Lato', sans-serif;
+
+  }
+  .btn:hover{
+    color: rgb(18, 104, 104);
+    
+  }
+  .par{
+    font-style: italic;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    text-transform: capitalize;
+    color: rgb(11, 11, 51);
+
   }
 
 </style>
