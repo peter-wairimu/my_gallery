@@ -1,9 +1,23 @@
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand">Navbar</a>
-      <form class="d-flex" role="search" action="">
-        <input class="form-control me-2" type="text" placeholder="Search" name="">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+<nav class="navbar navbar-light bg-success">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Welcome to my Gallery</a>
+    </div>
+
+    <!-- Adding a search form  -->
+    <div class="col-sm-4 col-md-4 navbar-right">
+
+      <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search category" name="category">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit"><i class="bi bi-search"></i></i></button>
+          </div>
+        </div>
+
       </form>
     </div>
-  </nav>
+    <!-- search form end -->
+  </div>
+</nav>
