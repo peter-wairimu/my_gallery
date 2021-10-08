@@ -47,13 +47,11 @@ def addPhoto(request):
     return render(request,'my-gallery/form.html',{'categories': categories})
 
 def search_results(request):
+    if request.method == "POST":
+        category = request.POST["category"]
+        searches = Photo.objects.filter().order_by('category')
 
-    if 'category' in request.GET and request.GET["category"]:
-        search_term = request.GET.get("category")
-        searched_categories = Category.search_by_title(search_term)
-        message = f"{search_term}"
-
-        return render(request, 'my-gallery/search.html',{"message":message,"categories": searched_categories})
+        return render(request, 'my-gallery/search.html',{"category": category,"search":searches})
 
     else:
         message = "You haven't searched for any term"
