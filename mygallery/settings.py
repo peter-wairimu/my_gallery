@@ -31,13 +31,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = os.environ.get('DEBUG', False)
-# development
+DEBUG = os.environ.get('DEBUG', True)
+# # development
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('gallery'),
+           'NAME': config('photos'),
            'USER': config('moringa'),
            'PASSWORD': config('wairimu22'),
            'HOST': config('127.0.0.1'),
@@ -59,6 +59,7 @@ DATABASES['default'].update(db_from_env)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Application definition
 
+
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
@@ -74,7 +75,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
