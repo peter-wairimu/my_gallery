@@ -36,6 +36,9 @@
                     </a>
                   {% endfor %}
                   
+                  <li class="list-group-item">
+                    <a href="{% url 'add' %}" class="btn">add image</a>
+                  </li>
                 </ul>
               </div>
               
@@ -144,7 +147,8 @@
   font-style: italic;
   font-family: 'Lato', sans-serif;
   text-transform: capitalize;
-  padding-top: 12px;
+  height: 5px;
+  padding-top: 20px;
 }
 .button:hover{
     color: rgb(18, 104, 104);
