@@ -10,7 +10,7 @@ urlpatterns=[
     path('photo/<str:pk>/',views.viewPhoto, name ='photo'),
     path('add/',views.addPhoto, name ='add'),
     path('search_results/',views.search_results, name='search_results'),
-    path('delete_event/<event_id>',views.delete_event,name='delete-event'),
+    path('delete_event/<str:pk>/',views.delete_event,name='delete-event'),
 
 ]
 

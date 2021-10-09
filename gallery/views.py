@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Category,Photo
+
 # Create your views here.
 
 def gallery(request):
@@ -17,6 +18,14 @@ def gallery(request):
 def viewPhoto(request,pk):
     photo = Photo.objects.get(id=pk)
     return render(request,'my-gallery/photos.html',{'photo':photo})
+
+def delete_event(request,pk):
+    photo = Photo.objects.get(id=pk)
+    photo.delete()
+    return  redirect ("gallery")
+
+
+
 
 
 def addPhoto(request):
@@ -56,4 +65,6 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'my-gallery/search.html',{"message":message})
+
+
 
