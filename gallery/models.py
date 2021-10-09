@@ -20,5 +20,12 @@ class Photo(models.Model):
     def __str__(self):
         return self.description
 
+    @classmethod
+    def search_category(cls,search):
+        searches = cls.objects.filter(category__name__icontains = search)
+        return searches
+
+
+
     
     
