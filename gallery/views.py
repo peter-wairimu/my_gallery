@@ -19,20 +19,7 @@ def viewPhoto(request,pk):
     photo = Photo.objects.get(id=pk)
     return render(request,'my-gallery/photos.html',{'photo':photo})
 
-def delete_event(request,pk):
-    photo = Photo.objects.get(id=pk)
-    photo.delete()
-    return  redirect ("gallery")
 
-
-
-
-
-
-
-
-
-    
 
 def search_results(request):
     if 'category' in request.GET and request.GET["category"]:
