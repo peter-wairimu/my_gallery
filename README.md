@@ -1,6 +1,6 @@
-# Blogs app 
+# My Photo Gallery
 
-## Date, 19/08/2021
+## Date, 9/10/2021
 
 
 ## By Peter Chege Wairimu.
@@ -8,21 +8,21 @@
 
 # Description 
 
-Blog app is an application where users get to see random quotes and blogs posted by others. They can alos like, comment and deleted a post if they want to.
+My photo gallery is a simple web where a user can get to interact with photos that i have posted also a user can get to add an image or delete an image. 
 
 # Instructions
 
-(i). Sign up inorder to access the app if you don't have an account or login if you do
+(i). click on the view button to focus on that one image u can zoom in and zoom out.
 
 
-(ii). Write a comment on the comment section and click on the button beside to submit your comment.
+(ii). Click on the search bar input any category u want to search and it will be displayed.
 
 
 
-(iii). Create a blog and post it on the home page by simply clicking on the create blog button to write your blog then click on the post botton to post your blog.
+(iii). click on the card on the left to choose and view any category you are intrested in
 
 
-(iv).Live a like or disklike in any blog you choose.
+
 
 
 
@@ -38,11 +38,11 @@ Blog app is an application where users get to see random quotes and blogs posted
 
 ### (4). Javascript.
 
-### (5). Python.
+### (5). Python/Django.
 
 
 ## 
-<img src="gallery/static/images/photo3.png">
+<img src="gallery/static/images/kam1.png">
 <img src="gallery/static/images/photo2.png">
 <img src="gallery/static/images/photo1.png">
 
